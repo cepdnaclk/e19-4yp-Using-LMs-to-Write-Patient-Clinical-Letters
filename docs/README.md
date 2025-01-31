@@ -4,18 +4,18 @@ permalink: index.html
 
 # Please update this with your repository name and title
 repository-name: eYY-4yp-project-template
-title:
+title: Using LMs to Write Patient Clinical Letters
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Using LMs to Write Patient Clinical Letters
 
 #### Team
 
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
+- E/19/253 [email](e19253@eng.pdn.ac.lk) [Narasinghe N.K.B.I.U.](https://github.com/Isira-Udantha)
+- E/19/431 [email](e19431@eng.pdn.ac.lk) [Wickramaarachchi I.W.A.P.D.](https://github.com/Prageeth-Dananjaya)
+- E/19/465 [email](e19465@eng.pdn.ac.lk) [Dilshan R.M.S.](https://github.com/e19465)
 
 #### Supervisors
 
