@@ -1,14 +1,3 @@
----
-layout: home
-permalink: index.html
-
-# Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
-title: Using LMs to Write Patient Clinical Letters
----
-
-[comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
-
 # Using LMs to Write Patient Clinical Letters
 
 #### Team
@@ -19,8 +8,9 @@ title: Using LMs to Write Patient Clinical Letters
 
 #### Supervisors
 
-- Name, [email](mailto:name@eng.pdn.ac.lk)
-- Name, [email](mailto:name@eng.pdn.ac.lk)
+- Dr. Asitha Bandaranayake, [email](mailto:asithab@eng.pdn.ac.lk)
+- Dr. Damayanthi Herath, [email](mailto:damayanthiherath@eng.pdn.ac.lk)
+- Mr. Biswajith Dissanayake, [email](mailto:biswajithd@eng.pdn.ac.lk)
 
 #### Table of content
 
