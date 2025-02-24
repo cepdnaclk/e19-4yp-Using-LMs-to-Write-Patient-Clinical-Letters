@@ -65,12 +65,15 @@ The development of AI-assisted clinical documentation encompasses several critic
 
 Our research follows a structured approach to ensure accuracy, privacy, and efficiency in clinical letter generation.
 
+![image](https://github.com/user-attachments/assets/49afb5e0-c844-453b-8f55-e8417e5a8f2b)
+
+
 ### Key Steps:
 1. **Synthetic Data Generation**: Using large language models (LLMs) to generate diverse medical case data.
-2. **Data Quality Enhancement**: Standardizing terminology, correcting spelling errors, and structuring input text.
+2. **Data Quality Enhancement**: Standardizing terminology, and structuring input text.
 3. **Privacy Protection**: Implementing anonymization and differential privacy measures.
 4. **Bias Mitigation**: Applying prefix tuning to minimize model bias.
-5. **Efficient Model Training**: Leveraging **LoRA** for parameter-efficient fine-tuning.
+5. **Efficient Model Training**: Leveraging LoRA for parameter-efficient fine-tuning.
 6. **Quality Assurance**: Utilizing output refinement and multi-model evaluations to ensure accuracy.
 
 ---
