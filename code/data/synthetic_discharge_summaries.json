@@ -1,0 +1,1863 @@
+[
+  {
+    "patient_id": "001",
+    "age": 84,
+    "gender": "Male",
+    "admission_date": "2025-02-03",
+    "discharge_date": "2025-02-12",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "84-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "002",
+    "age": 41,
+    "gender": "Female",
+    "admission_date": "2025-03-23",
+    "discharge_date": "2025-04-02",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "41-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "003",
+    "age": 63,
+    "gender": "Male",
+    "admission_date": "2024-12-19",
+    "discharge_date": "2024-12-25",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "63-year-old male admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "004",
+    "age": 46,
+    "gender": "Male",
+    "admission_date": "2025-02-03",
+    "discharge_date": "2025-02-09",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "46-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "005",
+    "age": 41,
+    "gender": "Male",
+    "admission_date": "2024-12-22",
+    "discharge_date": "2024-12-30",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "41-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "006",
+    "age": 64,
+    "gender": "Female",
+    "admission_date": "2025-01-11",
+    "discharge_date": "2025-01-16",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "64-year-old female admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "007",
+    "age": 48,
+    "gender": "Female",
+    "admission_date": "2025-04-16",
+    "discharge_date": "2025-04-20",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "48-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "008",
+    "age": 68,
+    "gender": "Female",
+    "admission_date": "2025-01-06",
+    "discharge_date": "2025-01-09",
+    "primary_diagnosis": "Kidney Failure",
+    "procedures": [
+      "Hemodialysis",
+      "Renal Function Panel"
+    ],
+    "medications": [
+      "Erythropoietin",
+      "Calcium Acetate"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "68-year-old female admitted for kidney failure. Procedures performed include Hemodialysis, Renal Function Panel. Treated with Erythropoietin, Calcium Acetate. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "009",
+    "age": 74,
+    "gender": "Female",
+    "admission_date": "2025-01-04",
+    "discharge_date": "2025-01-11",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "74-year-old female admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "010",
+    "age": 44,
+    "gender": "Female",
+    "admission_date": "2025-02-03",
+    "discharge_date": "2025-02-07",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "44-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "011",
+    "age": 90,
+    "gender": "Female",
+    "admission_date": "2025-04-20",
+    "discharge_date": "2025-04-22",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "90-year-old female admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "012",
+    "age": 52,
+    "gender": "Female",
+    "admission_date": "2025-02-20",
+    "discharge_date": "2025-02-25",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "52-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "013",
+    "age": 48,
+    "gender": "Male",
+    "admission_date": "2025-02-06",
+    "discharge_date": "2025-02-08",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "48-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "014",
+    "age": 65,
+    "gender": "Female",
+    "admission_date": "2025-03-31",
+    "discharge_date": "2025-04-05",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "65-year-old female admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "015",
+    "age": 66,
+    "gender": "Female",
+    "admission_date": "2025-02-17",
+    "discharge_date": "2025-02-25",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "66-year-old female admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "016",
+    "age": 77,
+    "gender": "Male",
+    "admission_date": "2025-04-15",
+    "discharge_date": "2025-04-21",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "77-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "017",
+    "age": 87,
+    "gender": "Female",
+    "admission_date": "2025-02-03",
+    "discharge_date": "2025-02-05",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "87-year-old female admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "018",
+    "age": 47,
+    "gender": "Male",
+    "admission_date": "2025-04-15",
+    "discharge_date": "2025-04-18",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "47-year-old male admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "019",
+    "age": 42,
+    "gender": "Female",
+    "admission_date": "2025-01-12",
+    "discharge_date": "2025-01-21",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "42-year-old female admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "020",
+    "age": 51,
+    "gender": "Male",
+    "admission_date": "2024-12-22",
+    "discharge_date": "2024-12-27",
+    "primary_diagnosis": "Kidney Failure",
+    "procedures": [
+      "Hemodialysis",
+      "Renal Function Panel"
+    ],
+    "medications": [
+      "Erythropoietin",
+      "Calcium Acetate"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "51-year-old male admitted for kidney failure. Procedures performed include Hemodialysis, Renal Function Panel. Treated with Erythropoietin, Calcium Acetate. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "021",
+    "age": 62,
+    "gender": "Male",
+    "admission_date": "2025-04-29",
+    "discharge_date": "2025-05-09",
+    "primary_diagnosis": "Kidney Failure",
+    "procedures": [
+      "Hemodialysis",
+      "Renal Function Panel"
+    ],
+    "medications": [
+      "Erythropoietin",
+      "Calcium Acetate"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "62-year-old male admitted for kidney failure. Procedures performed include Hemodialysis, Renal Function Panel. Treated with Erythropoietin, Calcium Acetate. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "022",
+    "age": 85,
+    "gender": "Female",
+    "admission_date": "2025-02-12",
+    "discharge_date": "2025-02-15",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "85-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "023",
+    "age": 69,
+    "gender": "Male",
+    "admission_date": "2025-03-16",
+    "discharge_date": "2025-03-22",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "69-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "024",
+    "age": 64,
+    "gender": "Male",
+    "admission_date": "2024-12-24",
+    "discharge_date": "2025-01-03",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "64-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "025",
+    "age": 41,
+    "gender": "Female",
+    "admission_date": "2025-02-24",
+    "discharge_date": "2025-03-01",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "41-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "026",
+    "age": 74,
+    "gender": "Male",
+    "admission_date": "2025-04-24",
+    "discharge_date": "2025-04-29",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "74-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "027",
+    "age": 62,
+    "gender": "Male",
+    "admission_date": "2024-12-02",
+    "discharge_date": "2024-12-06",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "62-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "028",
+    "age": 74,
+    "gender": "Female",
+    "admission_date": "2025-02-17",
+    "discharge_date": "2025-02-25",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "74-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "029",
+    "age": 82,
+    "gender": "Male",
+    "admission_date": "2025-01-13",
+    "discharge_date": "2025-01-23",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "82-year-old male admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "030",
+    "age": 76,
+    "gender": "Male",
+    "admission_date": "2025-04-26",
+    "discharge_date": "2025-05-06",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "76-year-old male admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "031",
+    "age": 54,
+    "gender": "Female",
+    "admission_date": "2025-04-26",
+    "discharge_date": "2025-05-02",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "54-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "032",
+    "age": 76,
+    "gender": "Female",
+    "admission_date": "2025-02-10",
+    "discharge_date": "2025-02-16",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "76-year-old female admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "033",
+    "age": 51,
+    "gender": "Male",
+    "admission_date": "2025-01-27",
+    "discharge_date": "2025-01-31",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "51-year-old male admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "034",
+    "age": 46,
+    "gender": "Male",
+    "admission_date": "2024-12-21",
+    "discharge_date": "2024-12-28",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "46-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "035",
+    "age": 69,
+    "gender": "Male",
+    "admission_date": "2025-04-01",
+    "discharge_date": "2025-04-03",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "69-year-old male admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "036",
+    "age": 65,
+    "gender": "Male",
+    "admission_date": "2025-04-25",
+    "discharge_date": "2025-05-01",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "65-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "037",
+    "age": 89,
+    "gender": "Female",
+    "admission_date": "2025-01-02",
+    "discharge_date": "2025-01-06",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "89-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "038",
+    "age": 79,
+    "gender": "Female",
+    "admission_date": "2024-12-18",
+    "discharge_date": "2024-12-28",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "79-year-old female admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "039",
+    "age": 68,
+    "gender": "Female",
+    "admission_date": "2025-02-19",
+    "discharge_date": "2025-02-21",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "68-year-old female admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "040",
+    "age": 53,
+    "gender": "Female",
+    "admission_date": "2025-01-23",
+    "discharge_date": "2025-01-30",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "53-year-old female admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "041",
+    "age": 85,
+    "gender": "Male",
+    "admission_date": "2025-03-28",
+    "discharge_date": "2025-03-31",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "85-year-old male admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "042",
+    "age": 61,
+    "gender": "Male",
+    "admission_date": "2025-01-06",
+    "discharge_date": "2025-01-13",
+    "primary_diagnosis": "Kidney Failure",
+    "procedures": [
+      "Hemodialysis",
+      "Renal Function Panel"
+    ],
+    "medications": [
+      "Erythropoietin",
+      "Calcium Acetate"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "61-year-old male admitted for kidney failure. Procedures performed include Hemodialysis, Renal Function Panel. Treated with Erythropoietin, Calcium Acetate. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "043",
+    "age": 79,
+    "gender": "Female",
+    "admission_date": "2025-03-05",
+    "discharge_date": "2025-03-15",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "79-year-old female admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "044",
+    "age": 81,
+    "gender": "Female",
+    "admission_date": "2025-01-07",
+    "discharge_date": "2025-01-10",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "81-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "045",
+    "age": 64,
+    "gender": "Female",
+    "admission_date": "2025-02-07",
+    "discharge_date": "2025-02-15",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "64-year-old female admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "046",
+    "age": 84,
+    "gender": "Female",
+    "admission_date": "2025-02-15",
+    "discharge_date": "2025-02-25",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "84-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "047",
+    "age": 45,
+    "gender": "Male",
+    "admission_date": "2025-02-23",
+    "discharge_date": "2025-02-26",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "45-year-old male admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "048",
+    "age": 61,
+    "gender": "Male",
+    "admission_date": "2025-01-26",
+    "discharge_date": "2025-01-29",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "61-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "049",
+    "age": 41,
+    "gender": "Male",
+    "admission_date": "2025-02-19",
+    "discharge_date": "2025-02-22",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "41-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "050",
+    "age": 78,
+    "gender": "Female",
+    "admission_date": "2025-03-11",
+    "discharge_date": "2025-03-13",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "78-year-old female admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "051",
+    "age": 48,
+    "gender": "Female",
+    "admission_date": "2025-01-29",
+    "discharge_date": "2025-02-03",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "48-year-old female admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "052",
+    "age": 71,
+    "gender": "Male",
+    "admission_date": "2025-02-26",
+    "discharge_date": "2025-03-02",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "71-year-old male admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "053",
+    "age": 87,
+    "gender": "Male",
+    "admission_date": "2025-01-17",
+    "discharge_date": "2025-01-24",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "87-year-old male admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "054",
+    "age": 86,
+    "gender": "Male",
+    "admission_date": "2025-02-13",
+    "discharge_date": "2025-02-22",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "86-year-old male admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "055",
+    "age": 54,
+    "gender": "Male",
+    "admission_date": "2024-12-10",
+    "discharge_date": "2024-12-20",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "54-year-old male admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "056",
+    "age": 88,
+    "gender": "Male",
+    "admission_date": "2025-04-14",
+    "discharge_date": "2025-04-23",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "88-year-old male admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "057",
+    "age": 68,
+    "gender": "Male",
+    "admission_date": "2025-04-23",
+    "discharge_date": "2025-04-27",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "68-year-old male admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "058",
+    "age": 51,
+    "gender": "Male",
+    "admission_date": "2025-04-10",
+    "discharge_date": "2025-04-18",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "51-year-old male admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "059",
+    "age": 85,
+    "gender": "Female",
+    "admission_date": "2025-04-09",
+    "discharge_date": "2025-04-12",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "85-year-old female admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "060",
+    "age": 83,
+    "gender": "Female",
+    "admission_date": "2025-04-29",
+    "discharge_date": "2025-05-01",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "83-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "061",
+    "age": 75,
+    "gender": "Male",
+    "admission_date": "2025-04-08",
+    "discharge_date": "2025-04-18",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "75-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "062",
+    "age": 43,
+    "gender": "Female",
+    "admission_date": "2025-01-09",
+    "discharge_date": "2025-01-16",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "43-year-old female admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "063",
+    "age": 57,
+    "gender": "Male",
+    "admission_date": "2025-01-08",
+    "discharge_date": "2025-01-11",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "57-year-old male admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "064",
+    "age": 60,
+    "gender": "Male",
+    "admission_date": "2025-03-29",
+    "discharge_date": "2025-04-06",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "60-year-old male admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "065",
+    "age": 80,
+    "gender": "Female",
+    "admission_date": "2025-02-20",
+    "discharge_date": "2025-02-25",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "80-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "066",
+    "age": 62,
+    "gender": "Female",
+    "admission_date": "2025-04-21",
+    "discharge_date": "2025-04-27",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "62-year-old female admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "067",
+    "age": 67,
+    "gender": "Female",
+    "admission_date": "2025-01-15",
+    "discharge_date": "2025-01-17",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "67-year-old female admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "068",
+    "age": 46,
+    "gender": "Male",
+    "admission_date": "2025-03-25",
+    "discharge_date": "2025-04-03",
+    "primary_diagnosis": "Pneumonia",
+    "procedures": [
+      "Chest X-Ray",
+      "Antibiotic Therapy"
+    ],
+    "medications": [
+      "Azithromycin",
+      "Ceftriaxone"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "46-year-old male admitted for pneumonia. Procedures performed include Chest X-Ray, Antibiotic Therapy. Treated with Azithromycin, Ceftriaxone. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "069",
+    "age": 71,
+    "gender": "Male",
+    "admission_date": "2024-12-08",
+    "discharge_date": "2024-12-17",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "71-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "070",
+    "age": 77,
+    "gender": "Male",
+    "admission_date": "2024-12-31",
+    "discharge_date": "2025-01-04",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "77-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "071",
+    "age": 50,
+    "gender": "Male",
+    "admission_date": "2025-03-19",
+    "discharge_date": "2025-03-27",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "50-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "072",
+    "age": 59,
+    "gender": "Male",
+    "admission_date": "2025-02-24",
+    "discharge_date": "2025-02-27",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "59-year-old male admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "073",
+    "age": 67,
+    "gender": "Male",
+    "admission_date": "2025-02-22",
+    "discharge_date": "2025-03-04",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "67-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "074",
+    "age": 51,
+    "gender": "Female",
+    "admission_date": "2025-04-15",
+    "discharge_date": "2025-04-24",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "51-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "075",
+    "age": 83,
+    "gender": "Male",
+    "admission_date": "2025-01-19",
+    "discharge_date": "2025-01-22",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "83-year-old male admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "076",
+    "age": 71,
+    "gender": "Male",
+    "admission_date": "2025-01-01",
+    "discharge_date": "2025-01-11",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "71-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "077",
+    "age": 89,
+    "gender": "Male",
+    "admission_date": "2025-02-04",
+    "discharge_date": "2025-02-07",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "89-year-old male admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "078",
+    "age": 41,
+    "gender": "Male",
+    "admission_date": "2024-12-09",
+    "discharge_date": "2024-12-16",
+    "primary_diagnosis": "Acute Myocardial Infarction",
+    "procedures": [
+      "Coronary Angioplasty",
+      "ECG",
+      "Cardiac Enzymes Test"
+    ],
+    "medications": [
+      "Aspirin",
+      "Atorvastatin",
+      "Metoprolol"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "41-year-old male admitted for acute myocardial infarction. Procedures performed include Coronary Angioplasty, ECG, Cardiac Enzymes Test. Treated with Aspirin, Atorvastatin, Metoprolol. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "079",
+    "age": 46,
+    "gender": "Female",
+    "admission_date": "2024-12-12",
+    "discharge_date": "2024-12-21",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "46-year-old female admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "080",
+    "age": 90,
+    "gender": "Male",
+    "admission_date": "2025-01-26",
+    "discharge_date": "2025-02-02",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "90-year-old male admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "081",
+    "age": 62,
+    "gender": "Female",
+    "admission_date": "2025-03-02",
+    "discharge_date": "2025-03-07",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "62-year-old female admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "082",
+    "age": 78,
+    "gender": "Male",
+    "admission_date": "2025-02-05",
+    "discharge_date": "2025-02-07",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "78-year-old male admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "083",
+    "age": 87,
+    "gender": "Female",
+    "admission_date": "2025-03-27",
+    "discharge_date": "2025-04-01",
+    "primary_diagnosis": "Congestive Heart Failure",
+    "procedures": [
+      "Echocardiogram",
+      "Diuretic Therapy"
+    ],
+    "medications": [
+      "Furosemide",
+      "Lisinopril",
+      "Carvedilol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "87-year-old female admitted for congestive heart failure. Procedures performed include Echocardiogram, Diuretic Therapy. Treated with Furosemide, Lisinopril, Carvedilol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "084",
+    "age": 68,
+    "gender": "Male",
+    "admission_date": "2025-01-19",
+    "discharge_date": "2025-01-22",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "68-year-old male admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "085",
+    "age": 85,
+    "gender": "Female",
+    "admission_date": "2025-03-10",
+    "discharge_date": "2025-03-14",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "85-year-old female admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "086",
+    "age": 62,
+    "gender": "Female",
+    "admission_date": "2025-01-07",
+    "discharge_date": "2025-01-09",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "62-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "087",
+    "age": 64,
+    "gender": "Male",
+    "admission_date": "2025-03-08",
+    "discharge_date": "2025-03-12",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "64-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "088",
+    "age": 69,
+    "gender": "Male",
+    "admission_date": "2024-12-20",
+    "discharge_date": "2024-12-29",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "69-year-old male admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "089",
+    "age": 61,
+    "gender": "Female",
+    "admission_date": "2024-12-07",
+    "discharge_date": "2024-12-15",
+    "primary_diagnosis": "Kidney Failure",
+    "procedures": [
+      "Hemodialysis",
+      "Renal Function Panel"
+    ],
+    "medications": [
+      "Erythropoietin",
+      "Calcium Acetate"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "61-year-old female admitted for kidney failure. Procedures performed include Hemodialysis, Renal Function Panel. Treated with Erythropoietin, Calcium Acetate. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "090",
+    "age": 55,
+    "gender": "Female",
+    "admission_date": "2025-04-13",
+    "discharge_date": "2025-04-16",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "55-year-old female admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "091",
+    "age": 81,
+    "gender": "Male",
+    "admission_date": "2024-12-03",
+    "discharge_date": "2024-12-10",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "81-year-old male admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "092",
+    "age": 61,
+    "gender": "Female",
+    "admission_date": "2025-01-03",
+    "discharge_date": "2025-01-12",
+    "primary_diagnosis": "Chronic Obstructive Pulmonary Disease",
+    "procedures": [
+      "Bronchodilator Therapy",
+      "Pulmonary Function Test"
+    ],
+    "medications": [
+      "Albuterol",
+      "Tiotropium"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "61-year-old female admitted for chronic obstructive pulmonary disease. Procedures performed include Bronchodilator Therapy, Pulmonary Function Test. Treated with Albuterol, Tiotropium. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "093",
+    "age": 82,
+    "gender": "Female",
+    "admission_date": "2024-12-05",
+    "discharge_date": "2024-12-09",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "82-year-old female admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "094",
+    "age": 81,
+    "gender": "Female",
+    "admission_date": "2025-03-18",
+    "discharge_date": "2025-03-24",
+    "primary_diagnosis": "Type 2 Diabetes Mellitus",
+    "procedures": [
+      "Blood Glucose Monitoring",
+      "Insulin Therapy"
+    ],
+    "medications": [
+      "Metformin",
+      "Insulin Glargine"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "81-year-old female admitted for type 2 diabetes mellitus. Procedures performed include Blood Glucose Monitoring, Insulin Therapy. Treated with Metformin, Insulin Glargine. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "095",
+    "age": 50,
+    "gender": "Male",
+    "admission_date": "2025-03-24",
+    "discharge_date": "2025-03-29",
+    "primary_diagnosis": "Sepsis",
+    "procedures": [
+      "Blood Cultures",
+      "IV Antibiotics",
+      "Fluid Resuscitation"
+    ],
+    "medications": [
+      "Vancomycin",
+      "Piperacillin-Tazobactam"
+    ],
+    "follow_up_instructions": "Follow up in 4 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "50-year-old male admitted for sepsis. Procedures performed include Blood Cultures, IV Antibiotics, Fluid Resuscitation. Treated with Vancomycin, Piperacillin-Tazobactam. Discharged in stable condition. Follow up in 4 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "096",
+    "age": 48,
+    "gender": "Female",
+    "admission_date": "2025-01-30",
+    "discharge_date": "2025-02-03",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "48-year-old female admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "097",
+    "age": 65,
+    "gender": "Male",
+    "admission_date": "2025-03-23",
+    "discharge_date": "2025-03-26",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "65-year-old male admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "098",
+    "age": 47,
+    "gender": "Male",
+    "admission_date": "2024-12-25",
+    "discharge_date": "2024-12-29",
+    "primary_diagnosis": "Stroke",
+    "procedures": [
+      "CT Scan",
+      "Thrombolysis",
+      "MRI Brain"
+    ],
+    "medications": [
+      "Clopidogrel",
+      "Atorvastatin",
+      "Amlodipine"
+    ],
+    "follow_up_instructions": "Follow up in 1 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "47-year-old male admitted for stroke. Procedures performed include CT Scan, Thrombolysis, MRI Brain. Treated with Clopidogrel, Atorvastatin, Amlodipine. Discharged in stable condition. Follow up in 1 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "099",
+    "age": 46,
+    "gender": "Male",
+    "admission_date": "2025-01-12",
+    "discharge_date": "2025-01-15",
+    "primary_diagnosis": "Asthma Exacerbation",
+    "procedures": [
+      "Nebulization",
+      "Oxygen Therapy"
+    ],
+    "medications": [
+      "Prednisone",
+      "Salbutamol"
+    ],
+    "follow_up_instructions": "Follow up in 3 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "46-year-old male admitted for asthma exacerbation. Procedures performed include Nebulization, Oxygen Therapy. Treated with Prednisone, Salbutamol. Discharged in stable condition. Follow up in 3 weeks with primary physician. Adhere to prescribed medications."
+  },
+  {
+    "patient_id": "100",
+    "age": 47,
+    "gender": "Male",
+    "admission_date": "2025-01-25",
+    "discharge_date": "2025-02-03",
+    "primary_diagnosis": "Hypertensive Emergency",
+    "procedures": [
+      "IV Antihypertensives",
+      "Blood Pressure Monitoring"
+    ],
+    "medications": [
+      "Labetalol",
+      "Nitroglycerin"
+    ],
+    "follow_up_instructions": "Follow up in 2 weeks with primary physician. Adhere to prescribed medications.",
+    "summary": "47-year-old male admitted for hypertensive emergency. Procedures performed include IV Antihypertensives, Blood Pressure Monitoring. Treated with Labetalol, Nitroglycerin. Discharged in stable condition. Follow up in 2 weeks with primary physician. Adhere to prescribed medications."
+  }
+]
