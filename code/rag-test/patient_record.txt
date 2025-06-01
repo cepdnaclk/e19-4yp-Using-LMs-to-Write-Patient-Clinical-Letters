@@ -1,0 +1,5 @@
+
+Patient was admitted on 2023-04-02 with fever, hypotension, and positive blood cultures.
+Blood cultures confirmed methicillin-resistant Staphylococcus aureus (MRSA).
+The patient was treated with intravenous vancomycin for 5 days and improved clinically.
+Discharge diagnosis was sepsis due to MRSA.
