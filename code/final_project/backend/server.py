@@ -3,18 +3,23 @@ from flask_cors import CORS
 import ollama
 from werkzeug.security import generate_password_hash, check_password_hash
 import logging
-
 import mysql.connector
+from settings import (
+    DATABASE_USER,
+    DATABASE_HOST,
+    DATABASE_NAME,
+    DATABASE_PASSWORD
+)
 
 # app instance
 app = Flask(__name__)
 CORS(app)
 
 mydb = mysql.connector.connect(
-    host = "localhost",
-    user = "root",
-    password = "12345",
-    database = "fyp",
+    host = DATABASE_HOST,
+    user = DATABASE_USER,
+    password = DATABASE_PASSWORD,
+    database = DATABASE_NAME,
 )
 
 # Global variable to store patient data
