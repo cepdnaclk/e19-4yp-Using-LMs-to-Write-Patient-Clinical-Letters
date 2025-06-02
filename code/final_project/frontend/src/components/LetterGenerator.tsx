@@ -1,32 +1,37 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import { letterApi, patientApi } from '../api/apiClient';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faCalendarAlt, faFileAlt, faSave, faDownload } from '@fortawesome/free-solid-svg-icons';
-import dynamic from 'next/dynamic';
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faCalendarAlt,
+  faFileAlt,
+  faSave,
+  faDownload,
+} from "@fortawesome/free-solid-svg-icons";
+import dynamic from "next/dynamic";
 
 // Import React-Quill dynamically to avoid SSR issues
-const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
-import 'react-quill/dist/quill.snow.css';
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.snow.css";
 
 const LetterGenerator = () => {
-  const [patientId, setPatientId] = useState('');
-  const [patientName, setPatientName] = useState('');
-  const [letterContent, setLetterContent] = useState('');
-  const [letterType, setLetterType] = useState('referral');
-  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [patientId, setPatientId] = useState("");
+  const [patientName, setPatientName] = useState("");
+  const [letterContent, setLetterContent] = useState("");
+  const [letterType, setLetterType] = useState("referral");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  
+
   // Mock patient data for search
   const patients = [
-    { id: 'P-1001', name: 'Alice Johnson' },
-    { id: 'P-1002', name: 'Bob Smith' },
-    { id: 'P-1003', name: 'Carol Williams' },
-    { id: 'P-1004', name: 'David Brown' },
-    { id: 'P-1005', name: 'Eva Davis' },
+    { id: "P-1001", name: "Alice Johnson" },
+    { id: "P-1002", name: "Bob Smith" },
+    { id: "P-1003", name: "Carol Williams" },
+    { id: "P-1004", name: "David Brown" },
+    { id: "P-1005", name: "Eva Davis" },
   ];
 
   const [searchResults, setSearchResults] = useState([]);
@@ -38,7 +43,7 @@ const LetterGenerator = () => {
       setShowSearchResults(false);
       return;
     }
-    
+
     // In a real integration, this would call the backend API
     // try {
     //   const results = await patientApi.searchPatients(query);
@@ -48,13 +53,14 @@ const LetterGenerator = () => {
     //   console.error('Error searching patients:', err);
     //   setError('Failed to search patients. Please try again.');
     // }
-    
+
     // For now, filter the mock data
-    const results = patients.filter(patient => 
-      patient.name.toLowerCase().includes(query.toLowerCase()) ||
-      patient.id.toLowerCase().includes(query.toLowerCase())
+    const results = patients.filter(
+      (patient) =>
+        patient.name.toLowerCase().includes(query.toLowerCase()) ||
+        patient.id.toLowerCase().includes(query.toLowerCase())
     );
-    
+
     setSearchResults(results);
     setShowSearchResults(true);
   };
@@ -67,25 +73,25 @@ const LetterGenerator = () => {
 
   const generateLetter = async () => {
     if (!patientId || !letterContent) {
-      setError('Please select a patient and enter letter content.');
+      setError("Please select a patient and enter letter content.");
       return;
     }
-    
+
     setLoading(true);
     setError(null);
     setSuccess(null);
-    
+
     try {
       // In a real integration, this would call the backend API
       // await letterApi.generateLetter(patientId, letterType, letterContent);
-      
+
       // For now, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSuccess('Letter generated successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setSuccess("Letter generated successfully!");
     } catch (err) {
-      console.error('Error generating letter:', err);
-      setError('Failed to generate letter. Please try again.');
+      console.error("Error generating letter:", err);
+      setError("Failed to generate letter. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -93,13 +99,13 @@ const LetterGenerator = () => {
 
   const downloadLetter = async () => {
     if (!patientId || !letterContent) {
-      setError('Please generate a letter first.');
+      setError("Please generate a letter first.");
       return;
     }
-    
+
     setLoading(true);
     setError(null);
-    
+
     try {
       // In a real integration, this would call the backend API to get PDF
       // const response = await letterApi.downloadLetter(patientId, letterType);
@@ -111,14 +117,14 @@ const LetterGenerator = () => {
       // document.body.appendChild(link);
       // link.click();
       // link.remove();
-      
+
       // For now, simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSuccess('Letter downloaded successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      setSuccess("Letter downloaded successfully!");
     } catch (err) {
-      console.error('Error downloading letter:', err);
-      setError('Failed to download letter. Please try again.');
+      console.error("Error downloading letter:", err);
+      setError("Failed to download letter. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -126,31 +132,37 @@ const LetterGenerator = () => {
 
   const modules = {
     toolbar: [
-      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-      ['bold', 'italic', 'underline', 'strike'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      [{ 'indent': '-1'}, { 'indent': '+1' }],
-      ['clean']
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ["bold", "italic", "underline", "strike"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ indent: "-1" }, { indent: "+1" }],
+      ["clean"],
     ],
   };
 
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800">Generate Clinical Letter</h1>
+        <h1 className="text-2xl font-bold text-gray-800">
+          Generate Clinical Letter
+        </h1>
         <div className="flex space-x-2">
-          <button 
+          <button
             onClick={generateLetter}
             disabled={loading}
-            className={`bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
             <FontAwesomeIcon icon={faSave} className="mr-2" />
-            {loading ? 'Processing...' : 'Save Letter'}
+            {loading ? "Processing..." : "Save Letter"}
           </button>
-          <button 
+          <button
             onClick={downloadLetter}
             disabled={loading || !success}
-            className={`bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors flex items-center ${(loading || !success) ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors flex items-center ${
+              loading || !success ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
             <FontAwesomeIcon icon={faDownload} className="mr-2" />
             Download PDF
@@ -162,8 +174,16 @@ const LetterGenerator = () => {
         <div className="bg-red-50 border-l-4 border-red-400 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+              <svg
+                className="h-5 w-5 text-red-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <div className="ml-3">
@@ -177,8 +197,16 @@ const LetterGenerator = () => {
         <div className="bg-green-50 border-l-4 border-green-400 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
-              <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              <svg
+                className="h-5 w-5 text-green-400"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
               </svg>
             </div>
             <div className="ml-3">
@@ -208,7 +236,7 @@ const LetterGenerator = () => {
             {showSearchResults && searchResults.length > 0 && (
               <div className="absolute z-10 mt-1 w-full bg-white shadow-lg rounded-md border border-gray-300 max-h-60 overflow-auto">
                 {searchResults.map((patient) => (
-                  <div 
+                  <div
                     key={patient.id}
                     className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
                     onClick={() => selectPatient(patient)}
@@ -270,7 +298,10 @@ const LetterGenerator = () => {
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FontAwesomeIcon icon={faCalendarAlt} className="text-gray-400" />
+                <FontAwesomeIcon
+                  icon={faCalendarAlt}
+                  className="text-gray-400"
+                />
               </div>
               <input
                 type="date"
@@ -287,9 +318,9 @@ const LetterGenerator = () => {
             Letter Content
           </label>
           <div className="border border-gray-300 rounded-md">
-            <ReactQuill 
-              theme="snow" 
-              value={letterContent} 
+            <ReactQuill
+              theme="snow"
+              value={letterContent}
               onChange={setLetterContent}
               modules={modules}
               className="h-64"
@@ -301,12 +332,14 @@ const LetterGenerator = () => {
           <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
             Cancel
           </button>
-          <button 
+          <button
             onClick={generateLetter}
             disabled={loading}
-            className={`px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+              loading ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
-            {loading ? 'Processing...' : 'Generate Letter'}
+            {loading ? "Processing..." : "Generate Letter"}
           </button>
         </div>
       </div>

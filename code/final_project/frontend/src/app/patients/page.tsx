@@ -1,6 +1,6 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import PatientList from '../components/PatientList';
+import React from "react";
+import Layout from "../../components/Layout";
+import PatientList from "../../components/PatientList";
 
 export default function PatientsPage() {
   return (

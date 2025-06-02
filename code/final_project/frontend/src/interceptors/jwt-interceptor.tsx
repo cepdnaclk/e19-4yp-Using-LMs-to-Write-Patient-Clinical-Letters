@@ -3,13 +3,11 @@ import authService from "../services/AuthService";
 
 const axiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
-  withCredentials: true, // Include credentials (cookies) in requests.
+  withCredentials: true,
 });
 
 axiosInstance.interceptors.request.use(
   (request) => {
-    // Since cookies are automatically sent with `withCredentials`,
-    // there's no need to manually attach tokens in headers.
     return request;
   },
   (error) => {
@@ -18,7 +16,7 @@ axiosInstance.interceptors.request.use(
 );
 
 axiosInstance.interceptors.response.use(
-  (response) => response, // Directly return successful responses.
+  (response) => response,
   async (error) => {
     console.error("Request error:", error);
     const originalRequest = error.config;
@@ -26,28 +24,18 @@ axiosInstance.interceptors.response.use(
       (error.response?.status === 401 || error.response?.status === 403) &&
       !originalRequest._retry
     ) {
-      // console.log("Refreshing token...");
-      originalRequest._retry = true; // Mark the request as retried to avoid infinite loops.
+      originalRequest._retry = true;
       try {
-        // Make a request to your auth server to refresh the token using cookies.
         await authService.refreshTokens();
-
-        // Retry the original request after the token is refreshed.
         return axiosInstance(originalRequest);
       } catch (refreshError) {
-        // Handle refresh errors by redirecting to the login page.
-        // clear data from storges
         localStorage.clear();
         sessionStorage.clear();
-
-        // Redirect to the login page.
         window.location.href = "/";
-
-        // Return the error to the original request.
         return Promise.reject(refreshError);
       }
     }
-    return Promise.reject(error); // For all other errors, return the error as is.
+    return Promise.reject(error);
   }
 );
 
