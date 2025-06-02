@@ -10,6 +10,10 @@ from settings import (
     DATABASE_NAME,
     DATABASE_PASSWORD
 )
+from createDB import initialize_database
+
+# initialize database
+initialize_database()
 
 # app instance
 app = Flask(__name__)

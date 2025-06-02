@@ -1,3 +1,5 @@
 /fypenv
 /venv
 .env
+__pycache__
+*.pyc
