@@ -1,0 +1,151 @@
+patient_id,patient_name,date_of_birth,address,phone_number,email,admit_date,discharge_date,discharge_summary
+PID10000,Emily Johnson,1939-12-01,"569 Pine Rd, New City, FL 60631",771-496-3152,emily.johnson@example.com,2024-10-07,2024-10-23,"Patient admitted on 2024-10-07 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-10-23 with instructions."
+PID10001,Sarah Johnson,1999-11-08,"257 Main St, New City, CA 49434",770-763-8813,sarah.johnson@example.com,2025-05-07,2025-05-15,"Patient admitted on 2025-05-07 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-05-15 with instructions."
+PID10002,Jane Brown,1954-09-01,"465 Pine Rd, Otherville, FL 94207",613-808-3572,jane.brown@example.com,2025-01-27,2025-02-04,"Patient admitted on 2025-01-27 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-02-04 with instructions."
+PID10003,Robert Johnson,1956-11-24,"165 Main St, Anytown, TX 54387",200-479-9339,robert.johnson@example.com,2024-09-07,2024-09-26,"Patient admitted on 2024-09-07 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-26 with instructions."
+PID10004,Sarah Brown,1991-07-26,"388 Elm St, New City, TX 11953",820-406-5583,sarah.brown@example.com,2024-10-11,2024-10-26,"Patient admitted on 2024-10-11 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-10-26 with instructions."
+PID10005,Sarah Garcia,1972-01-20,"658 Elm St, Otherville, CA 80087",453-889-6340,sarah.garcia@example.com,2024-07-27,2024-08-15,"Patient admitted on 2024-07-27 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-08-15 with instructions."
+PID10006,Sarah Brown,2005-03-30,"136 Pine Rd, New City, TX 96709",278-406-1234,sarah.brown@example.com,2025-03-10,2025-03-28,"Patient admitted on 2025-03-10 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-03-28 with instructions."
+PID10007,Michael Jones,1963-01-29,"965 Oak Ave, Anytown, TX 75042",587-551-9405,michael.jones@example.com,2024-06-19,2024-07-04,"Patient admitted on 2024-06-19 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-07-04 with instructions."
+PID10008,Robert Johnson,1987-03-30,"446 Pine Rd, Otherville, IL 65488",899-869-6924,robert.johnson@example.com,2024-06-07,2024-06-13,"Patient admitted on 2024-06-07 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-06-13 with instructions."
+PID10009,Jane Smith,1942-02-26,"832 Pine Rd, Anytown, FL 18588",825-862-8377,jane.smith@example.com,2024-07-24,2024-08-14,"Patient admitted on 2024-07-24 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-08-14 with instructions."
+PID10010,Michael Garcia,1973-08-20,"933 Elm St, Otherville, FL 85840",272-227-9211,michael.garcia@example.com,2024-11-30,2024-12-12,"Patient admitted on 2024-11-30 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-12 with instructions."
+PID10011,Emily Jones,1969-09-12,"898 Elm St, New City, CA 71690",524-388-5414,emily.jones@example.com,2025-02-01,2025-02-20,"Patient admitted on 2025-02-01 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-02-20 with instructions."
+PID10012,John Brown,1966-11-13,"883 Main St, Somewhere, TX 17639",802-237-7388,john.brown@example.com,2024-07-10,2024-07-29,"Patient admitted on 2024-07-10 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-07-29 with instructions."
+PID10013,Jane Jones,1955-07-14,"955 Maple Dr, Otherville, CA 16010",650-328-9163,jane.jones@example.com,2024-12-03,2024-12-12,"Patient admitted on 2024-12-03 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-12 with instructions."
+PID10014,Emily Johnson,2005-04-20,"158 Elm St, Somewhere, FL 77004",373-689-1658,emily.johnson@example.com,2024-08-16,2024-08-24,"Patient admitted on 2024-08-16 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-08-24 with instructions."
+PID10015,Michael Brown,1958-05-01,"105 Main St, Anytown, FL 35994",549-255-9444,michael.brown@example.com,2025-04-18,2025-04-21,"Patient admitted on 2025-04-18 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-04-21 with instructions."
+PID10016,Sarah Garcia,1950-08-01,"862 Pine Rd, New City, NY 62529",625-385-2223,sarah.garcia@example.com,2024-08-13,2024-08-14,"Patient admitted on 2024-08-13 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-08-14 with instructions."
+PID10017,Jane Smith,1951-11-20,"593 Elm St, New City, IL 23086",539-457-6755,jane.smith@example.com,2024-06-09,2024-06-25,"Patient admitted on 2024-06-09 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-06-25 with instructions."
+PID10018,John Williams,1961-05-29,"419 Pine Rd, Anytown, FL 78356",921-941-4717,john.williams@example.com,2024-11-08,2024-11-19,"Patient admitted on 2024-11-08 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-11-19 with instructions."
+PID10019,Michael Williams,1957-03-01,"544 Main St, Otherville, CA 13441",416-357-3919,michael.williams@example.com,2025-02-02,2025-02-13,"Patient admitted on 2025-02-02 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-02-13 with instructions."
+PID10020,Emily Garcia,1946-08-21,"278 Oak Ave, Anytown, IL 29508",442-943-7853,emily.garcia@example.com,2025-02-24,2025-03-13,"Patient admitted on 2025-02-24 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-03-13 with instructions."
+PID10021,Jane Garcia,1977-01-10,"368 Elm St, Otherville, FL 47384",394-708-4692,jane.garcia@example.com,2025-04-11,2025-05-01,"Patient admitted on 2025-04-11 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-05-01 with instructions."
+PID10022,Robert Smith,1970-03-30,"349 Oak Ave, Somewhere, IL 41799",658-836-4417,robert.smith@example.com,2024-09-02,2024-09-03,"Patient admitted on 2024-09-02 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-03 with instructions."
+PID10023,Sarah Jones,1976-11-19,"809 Oak Ave, Somewhere, TX 52738",438-675-7270,sarah.jones@example.com,2025-05-11,2025-05-22,"Patient admitted on 2025-05-11 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-05-22 with instructions."
+PID10024,Jane Brown,1958-04-16,"267 Pine Rd, Somewhere, NY 65911",524-658-4891,jane.brown@example.com,2025-01-19,2025-01-29,"Patient admitted on 2025-01-19 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-01-29 with instructions."
+PID10025,Michael Johnson,1980-12-02,"343 Oak Ave, New City, CA 75863",743-770-9625,michael.johnson@example.com,2024-11-10,2024-11-20,"Patient admitted on 2024-11-10 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-11-20 with instructions."
+PID10026,Jane Brown,1984-07-14,"769 Maple Dr, New City, NY 26441",693-817-8976,jane.brown@example.com,2024-12-05,2024-12-09,"Patient admitted on 2024-12-05 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-09 with instructions."
+PID10027,Jane Brown,1983-01-13,"277 Oak Ave, Somewhere, CA 41278",947-378-3144,jane.brown@example.com,2024-08-19,2024-09-09,"Patient admitted on 2024-08-19 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-09 with instructions."
+PID10028,Robert Jones,1936-07-16,"742 Maple Dr, Anytown, CA 53176",625-440-2983,robert.jones@example.com,2024-11-28,2024-12-07,"Patient admitted on 2024-11-28 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-07 with instructions."
+PID10029,Emily Jones,1955-03-03,"909 Elm St, Otherville, FL 30513",613-877-9894,emily.jones@example.com,2024-11-27,2024-12-10,"Patient admitted on 2024-11-27 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-10 with instructions."
+PID10030,Sarah Garcia,1943-05-23,"901 Maple Dr, Otherville, NY 29090",699-733-5566,sarah.garcia@example.com,2024-10-03,2024-10-15,"Patient admitted on 2024-10-03 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-10-15 with instructions."
+PID10031,Emily Brown,1950-03-09,"843 Pine Rd, Otherville, NY 37689",254-722-4787,emily.brown@example.com,2024-12-04,2024-12-18,"Patient admitted on 2024-12-04 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-18 with instructions."
+PID10032,Sarah Brown,1957-12-22,"816 Main St, New City, NY 95550",533-939-1829,sarah.brown@example.com,2024-09-08,2024-09-27,"Patient admitted on 2024-09-08 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-27 with instructions."
+PID10033,Michael Smith,1991-03-12,"442 Maple Dr, Anytown, CA 11012",609-538-4121,michael.smith@example.com,2024-10-22,2024-10-29,"Patient admitted on 2024-10-22 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-10-29 with instructions."
+PID10034,Jane Smith,1941-12-29,"398 Maple Dr, Anytown, FL 36271",393-626-5025,jane.smith@example.com,2024-09-19,2024-09-28,"Patient admitted on 2024-09-19 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-28 with instructions."
+PID10035,Michael Smith,1979-01-27,"329 Pine Rd, Anytown, IL 22829",807-291-2731,michael.smith@example.com,2024-08-23,2024-09-10,"Patient admitted on 2024-08-23 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-10 with instructions."
+PID10036,Robert Williams,1979-12-28,"574 Oak Ave, Otherville, TX 82002",634-738-7808,robert.williams@example.com,2025-05-18,2025-05-29,"Patient admitted on 2025-05-18 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-05-29 with instructions."
+PID10037,John Smith,1959-09-29,"826 Maple Dr, Otherville, NY 62810",393-807-8753,john.smith@example.com,2025-05-23,2025-06-02,"Patient admitted on 2025-05-23 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-06-02 with instructions."
+PID10038,Sarah Johnson,1961-06-06,"860 Elm St, Anytown, TX 66760",960-215-1488,sarah.johnson@example.com,2024-08-24,2024-08-27,"Patient admitted on 2024-08-24 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-08-27 with instructions."
+PID10039,John Jones,1962-01-26,"993 Oak Ave, New City, IL 50200",873-799-6171,john.jones@example.com,2025-02-20,2025-03-12,"Patient admitted on 2025-02-20 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-03-12 with instructions."
+PID10040,Michael Jones,1983-12-29,"962 Elm St, Anytown, CA 67757",255-754-7732,michael.jones@example.com,2025-04-02,2025-04-11,"Patient admitted on 2025-04-02 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-04-11 with instructions."
+PID10041,Sarah Williams,1973-06-04,"292 Elm St, Anytown, NY 52066",950-636-9318,sarah.williams@example.com,2025-04-10,2025-04-17,"Patient admitted on 2025-04-10 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-04-17 with instructions."
+PID10042,Robert Jones,1952-09-29,"759 Oak Ave, New City, CA 61058",946-294-1385,robert.jones@example.com,2024-12-18,2025-01-03,"Patient admitted on 2024-12-18 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-01-03 with instructions."
+PID10043,Sarah Brown,1955-06-11,"762 Main St, Anytown, FL 20273",479-775-1689,sarah.brown@example.com,2024-11-19,2024-11-25,"Patient admitted on 2024-11-19 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-11-25 with instructions."
+PID10044,Sarah Williams,1999-03-03,"642 Pine Rd, Somewhere, FL 53130",997-534-8361,sarah.williams@example.com,2024-12-08,2024-12-23,"Patient admitted on 2024-12-08 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-12-23 with instructions."
+PID10045,Michael Garcia,1955-02-24,"138 Elm St, Anytown, IL 43374",868-791-1048,michael.garcia@example.com,2025-05-07,2025-05-12,"Patient admitted on 2025-05-07 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2025-05-12 with instructions."
+PID10046,John Garcia,1997-07-06,"301 Elm St, Somewhere, FL 43988",238-549-9142,john.garcia@example.com,2024-11-09,2024-11-14,"Patient admitted on 2024-11-09 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-11-14 with instructions."
+PID10047,Sarah Jones,1975-08-16,"942 Oak Ave, Somewhere, NY 98894",480-559-4544,sarah.jones@example.com,2024-06-10,2024-06-21,"Patient admitted on 2024-06-10 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-06-21 with instructions."
+PID10048,Jane Williams,1949-07-02,"484 Oak Ave, Anytown, IL 21906",665-551-3150,jane.williams@example.com,2024-08-27,2024-09-03,"Patient admitted on 2024-08-27 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-09-03 with instructions."
+PID10049,Sarah Smith,1963-07-14,"937 Maple Dr, Otherville, NY 62562",731-655-9508,sarah.smith@example.com,2024-10-29,2024-11-02,"Patient admitted on 2024-10-29 with condition.
+Presenting symptoms included discomfort.
+Discharged on 2024-11-02 with instructions."
