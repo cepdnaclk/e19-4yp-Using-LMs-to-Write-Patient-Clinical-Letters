@@ -7,7 +7,6 @@ from settings import (
     DATABASE_SETTINGS,
     configure_cors
 )
-from flask_cors import CORS 
 from createDB import initialize_database
 
 # initialize database
