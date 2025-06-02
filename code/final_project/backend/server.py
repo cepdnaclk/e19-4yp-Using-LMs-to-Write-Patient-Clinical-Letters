@@ -8,8 +8,10 @@ from settings import (
     DATABASE_USER,
     DATABASE_HOST,
     DATABASE_NAME,
-    DATABASE_PASSWORD
+    DATABASE_PASSWORD,
+    configure_cors
 )
+from flask_cors import CORS 
 from createDB import initialize_database
 
 # initialize database
@@ -17,7 +19,9 @@ initialize_database()
 
 # app instance
 app = Flask(__name__)
-CORS(app)
+
+# Configure CORS
+configure_cors(app)
 
 mydb = mysql.connector.connect(
     host = DATABASE_HOST,
@@ -124,6 +128,7 @@ def login():
 
 @app.route("/api/names", methods=['GET'])
 def return_names():
+    print("Returning demo names")
     demo_names = [
         "Alice", "Bob", "Charlie", "David", "Emma",
         "Frank", "Grace", "Henry", "Ivy", "Jack",
