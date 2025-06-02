@@ -8,7 +8,6 @@ import {
   faFileAlt,
   faDownload,
 } from "@fortawesome/free-solid-svg-icons";
-import letterService from "../../services/LetterService";
 
 interface DashboardCardProps {
   title: string;
@@ -115,9 +114,8 @@ const Dashboard = () => {
 
       try {
         // Example of API call that would be used in real integration
-        const names = await letterService.getSampleNames();
-        console.log("Sample names:", names);
-
+        // const names = await letterService.getSampleNames();
+        // console.log("Sample names:", names);
         // For now, we're using mock data initialized above
         // In a real app, we would set the state with API response data
       } catch (err) {
