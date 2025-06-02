@@ -4,10 +4,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 import mysql.connector
 from settings import (
-    DATABASE_USER,
-    DATABASE_HOST,
-    DATABASE_NAME,
-    DATABASE_PASSWORD,
+    DATABASE_SETTINGS,
     configure_cors
 )
 from flask_cors import CORS 
@@ -23,10 +20,10 @@ app = Flask(__name__)
 configure_cors(app)
 
 mydb = mysql.connector.connect(
-    host = DATABASE_HOST,
-    user = DATABASE_USER,
-    password = DATABASE_PASSWORD,
-    database = DATABASE_NAME,
+    host = DATABASE_SETTINGS.get("DATABASE_HOST"),
+    user = DATABASE_SETTINGS.get("DATABASE_USER"),
+    password = DATABASE_SETTINGS.get("DATABASE_PASSWORD"),
+    database = DATABASE_SETTINGS.get("DATABASE_NAME"),
 )
 
 # Global variable to store patient data
