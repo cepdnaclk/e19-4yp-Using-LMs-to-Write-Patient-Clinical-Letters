@@ -1,17 +1,14 @@
 import mysql.connector
-from settings import (
-    DATABASE_USER,
-    DATABASE_HOST,
-    DATABASE_PASSWORD
-)
+from settings import DATABASE_SETTINGS
+
 
 def initialize_database(sql_file_path='./dbStructure.sql'):
     try:
         # Connect to MySQL server (not to a specific database yet)
         mydb = mysql.connector.connect(
-            host=DATABASE_HOST,
-            user=DATABASE_USER,
-            password=DATABASE_PASSWORD,
+            host=DATABASE_SETTINGS.get("DATABASE_HOST"),
+            user=DATABASE_SETTINGS.get("DATABASE_USER"),
+            password=DATABASE_SETTINGS.get("DATABASE_PASSWORD"),
             autocommit=True  # optional, to auto-commit each DDL command
         )
 
