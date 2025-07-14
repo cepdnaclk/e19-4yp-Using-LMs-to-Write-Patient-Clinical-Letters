@@ -1,3 +1,4 @@
 presidio_analyzer
 presidio_anonymizer
 pycryptodome
+spaCy
