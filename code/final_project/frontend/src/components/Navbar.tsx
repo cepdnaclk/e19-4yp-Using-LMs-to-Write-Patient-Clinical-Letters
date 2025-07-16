@@ -23,8 +23,8 @@ const Navbar = () => {
                 <Image 
                   src="/images/logomed.png" 
                   alt="MediScribe Logo" 
-                  width={82} 
-                  height={9npm 2} 
+                  width={102} 
+                  height={102} 
                   className="mr-2"
                 />
                 <span className="text-white font-bold text-xl">MediScribe</span>
