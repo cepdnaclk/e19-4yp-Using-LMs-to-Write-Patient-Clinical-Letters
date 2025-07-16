@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import LetterGenerator from "../../components/LetterGenerator";
+import EnhancedLetterGenerator from "../../components/EnhancedLetterGenerator";
 
 export default function GeneratePage() {
   return (
     <Layout>
-      <LetterGenerator />
+      <EnhancedLetterGenerator />
     </Layout>
   );
 }

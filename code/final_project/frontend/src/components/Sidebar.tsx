@@ -10,7 +10,9 @@ import {
   faFileAlt, 
   faHistory, 
   faChartLine, 
-  faCog 
+  faCog,
+  faComments,
+  faMicrophone
 } from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
@@ -40,6 +42,14 @@ const Sidebar = () => {
             <Link href="/generate" className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
               <FontAwesomeIcon icon={faFileAlt} className="h-5 w-5 mr-3" />
               <span className="font-medium">Generate Letter</span>
+            </Link>
+            <Link href="/conversation" className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <FontAwesomeIcon icon={faComments} className="h-5 w-5 mr-3" />
+              <span className="font-medium">Patient Chat</span>
+            </Link>
+            <Link href="/audio" className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <FontAwesomeIcon icon={faMicrophone} className="h-5 w-5 mr-3" />
+              <span className="font-medium">Audio Recording</span>
             </Link>
             <Link href="/history" className="flex items-center px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
               <FontAwesomeIcon icon={faHistory} className="h-5 w-5 mr-3" />
