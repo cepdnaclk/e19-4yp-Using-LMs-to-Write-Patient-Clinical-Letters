@@ -20,14 +20,14 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <Image 
+                {/* <Image 
                   src="/images/logomed.png" 
                   alt="MediScribe Logo" 
                   width={102} 
                   height={102} 
                   className="mr-2"
-                />
-                <span className="text-white font-bold text-xl">MediScribe</span>
+                /> */}
+                <span className="text-white font-bold text-2xl">MediScribe</span>
               </Link>
             </div>
             <div className="hidden md:block">
