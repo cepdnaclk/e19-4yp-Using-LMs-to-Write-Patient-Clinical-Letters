@@ -20,13 +20,13 @@ const Sidebar = () => {
     <div className="h-screen bg-white shadow-lg w-64 hidden md:block">
       <div className="flex flex-col h-full">
         <div className="flex items-center justify-center h-20 border-b border-gray-200">
-          <Image 
-            src="/images/logomed.png" 
+          {/* <Image 
+            src="/images/icons/medical-document.svg" 
             alt="MediScribe Logo" 
-            width={102} 
-            height={102} 
+            width={32} 
+            height={32} 
             className="mr-2"
-          />
+          /> */}
           <span className="text-blue-600 font-bold text-xl">MediScribe</span>
         </div>
         <div className="flex-grow py-4 px-2">

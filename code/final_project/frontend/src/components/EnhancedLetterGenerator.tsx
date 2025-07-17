@@ -1,424 +1,357 @@
 "use client";
 
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faCalendarAlt,
-  faFileAlt,
-  faSave,
-  faDownload,
+import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faUser, 
+  faCalendarAlt, 
+  faFileAlt, 
+  faSpinner,
+  faPlus,
+  faMinus,
   faComments,
   faMicrophone,
-  faPlus,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
-import dynamic from "next/dynamic";
-import PatientDoctorChat from "./PatientDoctorChat";
-import AudioRecorder from "./AudioRecorder";
+  faFileText,
+  faRobot,
+  faSave,
+  faDownload
+} from '@fortawesome/free-solid-svg-icons';
+import PatientDoctorChat, { Message } from './PatientDoctorChat';
+import AudioRecorder, { AudioFile } from './AudioRecorder';
+import ChatDocumentUpload, { ChatDocument } from './ChatDocumentUpload';
+import LetterDisplay from './LetterDisplay';
+import { 
+  letterGenerationApi, 
+  LetterGenerationRequest, 
+  GeneratedLetter,
+  PatientInfo,
+  ParsedChatData
+} from '../services/letterGenerationApi';
 
-// Import React-Quill dynamically to avoid SSR issues
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import "react-quill/dist/quill.snow.css";
+const EnhancedLetterGenerator: React.FC = () => {
+  // Form state
+  const [selectedPatient, setSelectedPatient] = useState<PatientInfo | null>(null);
+  const [letterType, setLetterType] = useState('Referral Letter');
+  const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
+  const [doctorInfo, setDoctorInfo] = useState({
+    name: '',
+    title: '',
+    department: ''
+  });
+  const [additionalNotes, setAdditionalNotes] = useState('');
 
-interface Message {
-  id: string;
-  sender: "patient" | "doctor";
-  content: string;
-  timestamp: Date;
-}
-
-interface AudioFile {
-  id: string;
-  name: string;
-  url: string;
-  duration: number;
-  size: number;
-  type: "recorded" | "uploaded";
-  timestamp: Date;
-}
-
-const EnhancedLetterGenerator = () => {
-  const [patientId, setPatientId] = useState("");
-  const [patientName, setPatientName] = useState("");
-  const [letterContent, setLetterContent] = useState("");
-  const [letterType, setLetterType] = useState("referral");
-  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
-
-  // New state for messaging and audio integration
-  const [showChatSection, setShowChatSection] = useState(false);
-  const [showAudioSection, setShowAudioSection] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  // Data sources state
+  const [conversationMessages, setConversationMessages] = useState<Message[]>([]);
   const [audioFiles, setAudioFiles] = useState<AudioFile[]>([]);
-  const [includeConversation, setIncludeConversation] = useState(false);
-  const [includeAudioSummary, setIncludeAudioSummary] = useState(false);
+  const [chatDocuments, setChatDocuments] = useState<ChatDocument[]>([]);
+  const [parsedChatData, setParsedChatData] = useState<ParsedChatData[]>([]);
 
-  // Mock patient data for search
-  const patients = [
-    { id: "P-1001", name: "Alice Johnson" },
-    { id: "P-1002", name: "Bob Smith" },
-    { id: "P-1003", name: "Carol Williams" },
-    { id: "P-1004", name: "David Brown" },
-    { id: "P-1005", name: "Eva Davis" },
+  // Include options
+  const [includeConversation, setIncludeConversation] = useState(false);
+  const [includeAudio, setIncludeAudio] = useState(false);
+  const [includeChatDocuments, setIncludeChatDocuments] = useState(false);
+
+  // UI state
+  const [showConversation, setShowConversation] = useState(false);
+  const [showAudio, setShowAudio] = useState(false);
+  const [showChatDocuments, setShowChatDocuments] = useState(false);
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [generatedLetter, setGeneratedLetter] = useState<GeneratedLetter | null>(null);
+  const [isParsingDocuments, setIsParsingDocuments] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+
+  // Patient search
+  const [patientSearch, setPatientSearch] = useState('');
+  const [patientSearchResults, setPatientSearchResults] = useState<PatientInfo[]>([]);
+
+  // Mock patient data - replace with actual API call
+  const mockPatients: PatientInfo[] = [
+    { id: 'P-1001', name: 'Alice Johnson', dateOfBirth: '1985-03-15', gender: 'Female' },
+    { id: 'P-1002', name: 'Bob Smith', dateOfBirth: '1978-07-22', gender: 'Male' },
+    { id: 'P-1003', name: 'Carol Williams', dateOfBirth: '1992-11-08', gender: 'Female' },
+    { id: 'P-1004', name: 'David Brown', dateOfBirth: '1965-05-30', gender: 'Male' },
   ];
 
-  const [searchResults, setSearchResults] = useState([]);
-  const [showSearchResults, setShowSearchResults] = useState(false);
-
-  const handleSearch = (query) => {
-    if (!query) {
-      setSearchResults([]);
-      setShowSearchResults(false);
-      return;
+  // Handle patient search
+  useEffect(() => {
+    if (patientSearch.trim()) {
+      const filtered = mockPatients.filter(patient =>
+        patient.name.toLowerCase().includes(patientSearch.toLowerCase()) ||
+        patient.id.toLowerCase().includes(patientSearch.toLowerCase())
+      );
+      setPatientSearchResults(filtered);
+    } else {
+      setPatientSearchResults([]);
     }
+  }, [patientSearch]);
 
-    // In a real integration, this would call the backend API
-    const results = patients.filter(
-      (patient) =>
-        patient.name.toLowerCase().includes(query.toLowerCase()) ||
-        patient.id.toLowerCase().includes(query.toLowerCase())
-    );
-
-    setSearchResults(results);
-    setShowSearchResults(true);
-  };
-
-  const selectPatient = (patient) => {
-    setPatientId(patient.id);
-    setPatientName(patient.name);
-    setShowSearchResults(false);
-  };
-
-  const handleMessagesChange = (newMessages: Message[]) => {
-    setMessages(newMessages);
-  };
-
-  const handleAudioFilesChange = (newAudioFiles: AudioFile[]) => {
-    setAudioFiles(newAudioFiles);
-  };
-
-  const generateConversationSummary = () => {
-    if (messages.length === 0) return "";
-
-    const patientMessages = messages.filter((m) => m.sender === "patient");
-    const doctorMessages = messages.filter((m) => m.sender === "doctor");
-
-    let summary = "\n\n--- PATIENT-DOCTOR CONVERSATION SUMMARY ---\n";
-    summary += `Total Messages: ${messages.length} (Patient: ${patientMessages.length}, Doctor: ${doctorMessages.length})\n`;
-    summary += `Conversation Date: ${new Date().toLocaleDateString()}\n\n`;
-
-    summary += "CONVERSATION TRANSCRIPT:\n";
-    messages.forEach((message, index) => {
-      const time = message.timestamp.toLocaleTimeString();
-      const sender = message.sender === "patient" ? "PATIENT" : "DOCTOR";
-      summary += `${index + 1}. [${time}] ${sender}: ${message.content}\n`;
-    });
-
-    return summary;
-  };
-
-  const generateAudioSummary = () => {
-    if (audioFiles.length === 0) return "";
-
-    const totalDuration = audioFiles.reduce((total, file) => total + file.duration, 0);
-    const totalSize = audioFiles.reduce((total, file) => total + file.size, 0);
-    const recordedFiles = audioFiles.filter((f) => f.type === "recorded");
-    const uploadedFiles = audioFiles.filter((f) => f.type === "uploaded");
-
-    const formatTime = (seconds: number) => {
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-      return `${mins}:${secs.toString().padStart(2, "0")}`;
+  // Parse chat documents when they change
+  useEffect(() => {
+    const parseDocuments = async () => {
+      if (chatDocuments.length > 0 && includeChatDocuments) {
+        setIsParsingDocuments(true);
+        try {
+          const parsed = await letterGenerationApi.parseMultipleChatDocuments(chatDocuments);
+          setParsedChatData(parsed);
+        } catch (error) {
+          console.error('Error parsing chat documents:', error);
+          setError('Failed to parse chat documents. Please check the format and try again.');
+        } finally {
+          setIsParsingDocuments(false);
+        }
+      }
     };
 
-    const formatFileSize = (bytes: number) => {
-      if (bytes === 0) return "0 Bytes";
-      const k = 1024;
-      const sizes = ["Bytes", "KB", "MB", "GB"];
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-    };
+    parseDocuments();
+  }, [chatDocuments, includeChatDocuments]);
 
-    let summary = "\n\n--- AUDIO SESSION SUMMARY ---\n";
-    summary += `Total Audio Files: ${audioFiles.length}\n`;
-    summary += `Recorded Files: ${recordedFiles.length}\n`;
-    summary += `Uploaded Files: ${uploadedFiles.length}\n`;
-    summary += `Total Duration: ${formatTime(Math.floor(totalDuration))}\n`;
-    summary += `Total Size: ${formatFileSize(totalSize)}\n`;
-    summary += `Session Date: ${new Date().toLocaleDateString()}\n\n`;
-
-    summary += "AUDIO FILES LIST:\n";
-    audioFiles.forEach((file, index) => {
-      summary += `${index + 1}. ${file.name}\n`;
-      summary += `   - Duration: ${formatTime(Math.floor(file.duration))}\n`;
-      summary += `   - Size: ${formatFileSize(file.size)}\n`;
-      summary += `   - Type: ${file.type}\n`;
-      summary += `   - Timestamp: ${file.timestamp.toLocaleString()}\n\n`;
-    });
-
-    return summary;
+  const handlePatientSelect = (patient: PatientInfo) => {
+    setSelectedPatient(patient);
+    setPatientSearch('');
+    setPatientSearchResults([]);
   };
 
-  const generateLetter = async () => {
-    if (!patientId || !letterContent) {
-      setError("Please select a patient and enter letter content.");
-      return;
-    }
-
-    setLoading(true);
+  const clearMessages = () => {
     setError(null);
     setSuccess(null);
-
-    try {
-      let finalContent = letterContent;
-
-      // Add conversation summary if requested
-      if (includeConversation && messages.length > 0) {
-        finalContent += generateConversationSummary();
-      }
-
-      // Add audio summary if requested
-      if (includeAudioSummary && audioFiles.length > 0) {
-        finalContent += generateAudioSummary();
-      }
-
-      // In a real integration, this would call the backend API with the enhanced content
-      // await letterApi.generateLetter(patientId, letterType, finalContent, {
-      //   includeConversation,
-      //   includeAudioSummary,
-      //   messages: includeConversation ? messages : [],
-      //   audioFiles: includeAudioSummary ? audioFiles : []
-      // });
-
-      // For now, simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      setSuccess("Enhanced letter generated successfully with additional data!");
-    } catch (err) {
-      console.error("Error generating letter:", err);
-      setError("Failed to generate letter. Please try again.");
-    } finally {
-      setLoading(false);
-    }
   };
 
-  const downloadLetter = async () => {
-    if (!patientId || !letterContent) {
-      setError("Please generate a letter first.");
+  const handleGenerateLetter = async () => {
+    if (!selectedPatient) {
+      setError('Please select a patient first.');
       return;
     }
 
-    setLoading(true);
-    setError(null);
+    clearMessages();
+    setIsGenerating(true);
 
     try {
-      // In a real integration, this would call the backend API to get PDF
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setSuccess("Enhanced letter downloaded successfully!");
-    } catch (err) {
-      console.error("Error downloading letter:", err);
-      setError("Failed to download letter. Please try again.");
+      const request: LetterGenerationRequest = {
+        patientInfo: selectedPatient,
+        letterType,
+        date,
+        doctorInfo: doctorInfo.name ? doctorInfo : undefined,
+        additionalNotes: additionalNotes || undefined,
+        conversationData: includeConversation ? {
+          messages: conversationMessages.map(msg => ({
+            id: msg.id,
+            sender: msg.sender,
+            message: msg.message,
+            timestamp: msg.timestamp
+          })),
+          include: true
+        } : undefined,
+        audioData: includeAudio ? {
+          files: audioFiles,
+          include: true
+        } : undefined,
+        documentData: includeChatDocuments ? {
+          documents: chatDocuments,
+          include: true
+        } : undefined
+      };
+
+      const letter = await letterGenerationApi.generateLetter(request);
+      setGeneratedLetter(letter);
+      setSuccess('Enhanced letter generated successfully!');
+    } catch (error) {
+      console.error('Error generating letter:', error);
+      setError('Failed to generate letter. Please try again.');
     } finally {
-      setLoading(false);
+      setIsGenerating(false);
     }
   };
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, 4, 5, 6, false] }],
-      ["bold", "italic", "underline", "strike"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      [{ indent: "-1" }, { indent: "+1" }],
-      ["clean"],
-    ],
+  const handleLetterUpdate = (updatedLetter: GeneratedLetter) => {
+    setGeneratedLetter(updatedLetter);
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800">
-          Enhanced Clinical Letter Generator
-        </h1>
-        <div className="flex space-x-2">
-          <button
-            onClick={generateLetter}
-            disabled={loading}
-            className={`bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors flex items-center ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            <FontAwesomeIcon icon={faSave} className="mr-2" />
-            {loading ? "Processing..." : "Save Letter"}
-          </button>
-          <button
-            onClick={downloadLetter}
-            disabled={loading || !success}
-            className={`bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-colors flex items-center ${
-              loading || !success ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-          >
-            <FontAwesomeIcon icon={faDownload} className="mr-2" />
-            Download PDF
-          </button>
-        </div>
-      </div>
-
-      {error && (
-        <div className="bg-red-50 border-l-4 border-red-400 p-4">
-          <div className="flex">
-            <div className="flex-shrink-0">
-              <svg
-                className="h-5 w-5 text-red-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm text-red-700">{error}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {success && (
-        <div className="bg-green-50 border-l-4 border-green-400 p-4">
-          <div className="flex">
-            <div className="flex-shrink-0">
-              <svg
-                className="h-5 w-5 text-green-400"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <div className="ml-3">
-              <p className="text-sm text-green-700">{success}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
+    <div className="max-w-7xl mx-auto p-6 space-y-8">
+      {/* Header */}
       <div className="bg-white rounded-lg shadow-md p-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold text-gray-900">Enhanced Clinical Letter Generator</h1>
+          <div className="flex space-x-2">
+            <button 
+              onClick={() => setSuccess('Letter saved successfully!')}
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+            >
+              <FontAwesomeIcon icon={faSave} className="mr-2" />
+              Save Letter
+            </button>
+            <button 
+              onClick={() => setSuccess('Letter downloaded successfully!')}
+              className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
+            >
+              <FontAwesomeIcon icon={faDownload} className="mr-2" />
+              Download PDF
+            </button>
+          </div>
+        </div>
+
+        {/* Error/Success Messages */}
+        {error && (
+          <div className="mb-6 bg-red-50 border-l-4 border-red-400 p-4">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-red-700">{error}</p>
+              </div>
+              <button onClick={clearMessages} className="ml-auto text-red-400 hover:text-red-600">
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
+
+        {success && (
+          <div className="mb-6 bg-green-50 border-l-4 border-green-400 p-4">
+            <div className="flex">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-green-700">{success}</p>
+              </div>
+              <button onClick={clearMessages} className="ml-auto text-green-400 hover:text-green-600">
+                ✕
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Patient Search */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div className="relative">
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              <FontAwesomeIcon icon={faUser} className="mr-2" />
               Patient Search
             </label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FontAwesomeIcon icon={faUser} className="text-gray-400" />
-              </div>
-              <input
-                type="text"
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                placeholder="Search patient by name or ID"
-                onChange={(e) => handleSearch(e.target.value)}
-              />
-            </div>
-            {showSearchResults && searchResults.length > 0 && (
-              <div className="absolute z-10 mt-1 w-full bg-white shadow-lg rounded-md border border-gray-300 max-h-60 overflow-auto">
-                {searchResults.map((patient) => (
-                  <div
+            <input
+              type="text"
+              value={patientSearch}
+              onChange={(e) => setPatientSearch(e.target.value)}
+              placeholder="Search patient by name or ID"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            
+            {/* Search Results */}
+            {patientSearchResults.length > 0 && (
+              <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg max-h-60 overflow-y-auto">
+                {patientSearchResults.map((patient) => (
+                  <button
                     key={patient.id}
-                    className="px-4 py-2 hover:bg-blue-50 cursor-pointer"
-                    onClick={() => selectPatient(patient)}
+                    onClick={() => handlePatientSelect(patient)}
+                    className="w-full text-left px-4 py-2 hover:bg-gray-100 border-b border-gray-100 last:border-b-0"
                   >
-                    <p className="font-medium">{patient.name}</p>
-                    <p className="text-sm text-gray-500">{patient.id}</p>
-                  </div>
+                    <div className="font-medium">{patient.name}</div>
+                    <div className="text-sm text-gray-600">{patient.id}</div>
+                  </button>
                 ))}
               </div>
             )}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              <FontAwesomeIcon icon={faFileAlt} className="mr-2" />
               Letter Type
             </label>
             <select
               value={letterType}
               onChange={(e) => setLetterType(e.target.value)}
-              className="block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
-              <option value="referral">Referral Letter</option>
-              <option value="discharge">Discharge Summary</option>
-              <option value="followup">Follow-up Letter</option>
-              <option value="prescription">Prescription Letter</option>
-              <option value="consultation">Consultation Note</option>
+              <option value="Referral Letter">Referral Letter</option>
+              <option value="Discharge Summary">Discharge Summary</option>
+              <option value="Consultation Report">Consultation Report</option>
+              <option value="Follow-up Letter">Follow-up Letter</option>
+              <option value="Medical Certificate">Medical Certificate</option>
             </select>
           </div>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Patient ID
-            </label>
-            <input
-              type="text"
-              value={patientId}
-              onChange={(e) => setPatientId(e.target.value)}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              readOnly
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Patient Name
-            </label>
-            <input
-              type="text"
-              value={patientName}
-              onChange={(e) => setPatientName(e.target.value)}
-              className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              readOnly
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              <FontAwesomeIcon icon={faCalendarAlt} className="mr-2" />
               Date
             </label>
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FontAwesomeIcon
-                  icon={faCalendarAlt}
-                  className="text-gray-400"
-                />
-              </div>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              />
-            </div>
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
           </div>
         </div>
 
-        {/* Enhanced Features Section */}
-        <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-          <h3 className="text-lg font-medium text-gray-800 mb-4">Enhanced Features</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center justify-between p-3 bg-white rounded-md border">
+        {/* Selected Patient Info */}
+        {selectedPatient && (
+          <div className="bg-blue-50 p-4 rounded-lg mb-6">
+            <h3 className="font-medium text-blue-900 mb-2">
+              <FontAwesomeIcon icon={faUser} className="mr-2" />
+              Selected Patient: {selectedPatient.name} ({selectedPatient.id})
+            </h3>
+            <div className="text-sm text-blue-800">
+              <span className="mr-4">DOB: {selectedPatient.dateOfBirth}</span>
+              <span>Gender: {selectedPatient.gender}</span>
+            </div>
+          </div>
+        )}
+
+        {/* Doctor Information */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Doctor Name</label>
+            <input
+              type="text"
+              value={doctorInfo.name}
+              onChange={(e) => setDoctorInfo({...doctorInfo, name: e.target.value})}
+              placeholder="Dr. John Smith"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
+            <input
+              type="text"
+              value={doctorInfo.title}
+              onChange={(e) => setDoctorInfo({...doctorInfo, title: e.target.value})}
+              placeholder="Consultant Cardiologist"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Department</label>
+            <input
+              type="text"
+              value={doctorInfo.department}
+              onChange={(e) => setDoctorInfo({...doctorInfo, department: e.target.value})}
+              placeholder="Cardiology Department"
+              className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+          </div>
+        </div>
+
+        {/* Enhanced Features */}
+        <div className="space-y-6">
+          <h2 className="text-xl font-semibold text-gray-900">Enhanced Features</h2>
+
+          {/* Patient Conversation */}
+          <div className="border border-gray-200 rounded-lg">
+            <div className="flex items-center justify-between p-4 bg-gray-50 border-b border-gray-200">
               <div className="flex items-center">
                 <FontAwesomeIcon icon={faComments} className="text-blue-600 mr-3" />
                 <div>
-                  <p className="font-medium">Patient Conversation</p>
-                  <p className="text-sm text-gray-600">{messages.length} messages</p>
+                  <h3 className="font-medium text-gray-900">Patient Conversation</h3>
+                  <p className="text-sm text-gray-600">{conversationMessages.length} messages</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -428,24 +361,35 @@ const EnhancedLetterGenerator = () => {
                     checked={includeConversation}
                     onChange={(e) => setIncludeConversation(e.target.checked)}
                     className="mr-2"
-                    disabled={messages.length === 0}
                   />
-                  Include
+                  <span className="text-sm">Include</span>
                 </label>
                 <button
-                  onClick={() => setShowChatSection(!showChatSection)}
-                  className="p-1 text-blue-600 hover:bg-blue-100 rounded"
+                  onClick={() => setShowConversation(!showConversation)}
+                  className="text-blue-600 hover:text-blue-800"
                 >
-                  <FontAwesomeIcon icon={showChatSection ? faTrash : faPlus} />
+                  <FontAwesomeIcon icon={showConversation ? faMinus : faPlus} />
                 </button>
               </div>
             </div>
+            {showConversation && (
+              <div className="p-4">
+                <PatientDoctorChat
+                  patientId={selectedPatient?.id}
+                  patientName={selectedPatient?.name}
+                  onMessagesChange={setConversationMessages}
+                />
+              </div>
+            )}
+          </div>
 
-            <div className="flex items-center justify-between p-3 bg-white rounded-md border">
+          {/* Audio Files */}
+          <div className="border border-gray-200 rounded-lg">
+            <div className="flex items-center justify-between p-4 bg-gray-50 border-b border-gray-200">
               <div className="flex items-center">
                 <FontAwesomeIcon icon={faMicrophone} className="text-red-600 mr-3" />
                 <div>
-                  <p className="font-medium">Audio Files</p>
+                  <h3 className="font-medium text-gray-900">Audio Files</h3>
                   <p className="text-sm text-gray-600">{audioFiles.length} files</p>
                 </div>
               </div>
@@ -453,72 +397,114 @@ const EnhancedLetterGenerator = () => {
                 <label className="flex items-center">
                   <input
                     type="checkbox"
-                    checked={includeAudioSummary}
-                    onChange={(e) => setIncludeAudioSummary(e.target.checked)}
+                    checked={includeAudio}
+                    onChange={(e) => setIncludeAudio(e.target.checked)}
                     className="mr-2"
-                    disabled={audioFiles.length === 0}
                   />
-                  Include
+                  <span className="text-sm">Include</span>
                 </label>
                 <button
-                  onClick={() => setShowAudioSection(!showAudioSection)}
-                  className="p-1 text-red-600 hover:bg-red-100 rounded"
+                  onClick={() => setShowAudio(!showAudio)}
+                  className="text-blue-600 hover:text-blue-800"
                 >
-                  <FontAwesomeIcon icon={showAudioSection ? faTrash : faPlus} />
+                  <FontAwesomeIcon icon={showAudio ? faMinus : faPlus} />
                 </button>
               </div>
             </div>
+            {showAudio && (
+              <div className="p-4">
+                <AudioRecorder onAudioFilesChange={setAudioFiles} />
+              </div>
+            )}
+          </div>
+
+          {/* Chat Documents */}
+          <div className="border border-gray-200 rounded-lg">
+            <div className="flex items-center justify-between p-4 bg-gray-50 border-b border-gray-200">
+              <div className="flex items-center">
+                <FontAwesomeIcon icon={faFileText} className="text-green-600 mr-3" />
+                <div>
+                  <h3 className="font-medium text-gray-900">Chat Documents</h3>
+                  <p className="text-sm text-gray-600">
+                    {chatDocuments.length} documents
+                    {isParsingDocuments && (
+                      <span className="ml-2">
+                        <FontAwesomeIcon icon={faSpinner} className="animate-spin" />
+                        Parsing...
+                      </span>
+                    )}
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={includeChatDocuments}
+                    onChange={(e) => setIncludeChatDocuments(e.target.checked)}
+                    className="mr-2"
+                  />
+                  <span className="text-sm">Include</span>
+                </label>
+                <button
+                  onClick={() => setShowChatDocuments(!showChatDocuments)}
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  <FontAwesomeIcon icon={showChatDocuments ? faMinus : faPlus} />
+                </button>
+              </div>
+            </div>
+            {showChatDocuments && (
+              <div className="p-4">
+                <ChatDocumentUpload onDocumentsChange={setChatDocuments} />
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Chat Section */}
-        {showChatSection && (
-          <div className="mb-6">
-            <PatientDoctorChat
-              patientId={patientId}
-              patientName={patientName}
-              onMessagesChange={handleMessagesChange}
-            />
-          </div>
-        )}
-
-        {/* Audio Section */}
-        {showAudioSection && (
-          <div className="mb-6">
-            <AudioRecorder onAudioFilesChange={handleAudioFilesChange} />
-          </div>
-        )}
-
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Letter Content
+        {/* Additional Notes */}
+        <div className="mt-6">
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Additional Notes
           </label>
-          <div className="border border-gray-300 rounded-md">
-            <ReactQuill
-              theme="snow"
-              value={letterContent}
-              onChange={setLetterContent}
-              modules={modules}
-              className="h-64"
-            />
-          </div>
+          <textarea
+            value={additionalNotes}
+            onChange={(e) => setAdditionalNotes(e.target.value)}
+            rows={4}
+            placeholder="Any additional information or specific requirements for the letter..."
+            className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          />
         </div>
 
-        <div className="flex justify-end space-x-3">
-          <button className="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-            Cancel
-          </button>
+        {/* Generate Button */}
+        <div className="mt-6 flex justify-center">
           <button
-            onClick={generateLetter}
-            disabled={loading}
-            className={`px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            onClick={handleGenerateLetter}
+            disabled={!selectedPatient || isGenerating}
+            className="bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-lg font-medium"
           >
-            {loading ? "Processing..." : "Generate Enhanced Letter"}
+            {isGenerating ? (
+              <>
+                <FontAwesomeIcon icon={faSpinner} className="animate-spin mr-2" />
+                Generating Letter...
+              </>
+            ) : (
+              <>
+                <FontAwesomeIcon icon={faRobot} className="mr-2" />
+                Generate Enhanced Letter
+              </>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Generated Letter Display */}
+      <LetterDisplay
+        letter={generatedLetter}
+        isLoading={isGenerating}
+        onLetterUpdate={handleLetterUpdate}
+        className="mt-8"
+      />
     </div>
   );
 };
