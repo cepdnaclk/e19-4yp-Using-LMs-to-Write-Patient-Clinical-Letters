@@ -63,5 +63,11 @@ def generate_response(request: PromptRequest):
             temperature=0.7
         )
 
-    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    return {"response": response}
+    # Decode full output
+    decoded = tokenizer.decode(outputs[0], skip_special_tokens=True)
+
+    # Remove the original prompt portion
+    generated = decoded.replace(prompt, "").strip()
+
+    # Return only the model's generated response
+    return {"response": generated}
