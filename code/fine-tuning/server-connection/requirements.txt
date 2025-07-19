@@ -1,0 +1,7 @@
+peft
+bitsandbytes
+protobuf
+fastapi
+uvicorn
+transformers
+torch
