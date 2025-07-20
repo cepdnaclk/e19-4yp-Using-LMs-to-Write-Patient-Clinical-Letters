@@ -126,41 +126,82 @@ const EnhancedLetterGenerator: React.FC = () => {
     clearMessages();
     setIsGenerating(true);
 
-    try {
-      const request: LetterGenerationRequest = {
-        patientInfo: selectedPatient,
-        letterType,
-        date,
-        doctorInfo: doctorInfo.name ? doctorInfo : undefined,
-        additionalNotes: additionalNotes || undefined,
-        conversationData: includeConversation ? {
-          messages: conversationMessages.map(msg => ({
-            id: msg.id,
-            sender: msg.sender,
-            message: msg.message,
-            timestamp: msg.timestamp
-          })),
-          include: true
-        } : undefined,
-        audioData: includeAudio ? {
-          files: audioFiles,
-          include: true
-        } : undefined,
-        documentData: includeChatDocuments ? {
-          documents: chatDocuments,
-          include: true
-        } : undefined
-      };
 
-      const letter = await letterGenerationApi.generateLetter(request);
-      setGeneratedLetter(letter);
-      setSuccess('Enhanced letter generated successfully!');
+    try {
+        const chatPrompt = `Doctor: Hello, can you please tell me about your past medical history?
+          Patient: Hi, I don't have any past medical history.
+          Doctor: Okay. What brings you in today?
+          Patient: I've been experiencing painless blurry vision in my right eye for a week now. I've also had intermittent fevers, headache, body aches, and a nonpruritic maculopapular rash on my lower legs for the past 6 months.
+          Doctor: Thank you for sharing that. Have you had any other symptoms such as neck stiffness, nausea, vomiting, Raynaud's phenomenon, oral ulcerations, chest pain, shortness of breath, abdominal pain, or photosensitivity?
+          Patient: No, only an isolated episode of left knee swelling and testicular swelling in the past.
+          Doctor: Do you work with any toxic substances or have any habits like smoking, drinking, or illicit drug use?
+          Patient: No, I work as a flooring installer and I don't have any toxic habits.
+          Doctor: Alright. We checked your vital signs and they were normal. During the physical exam, we found bilateral papilledema and optic nerve erythema in your right eye, which was greater than in your left eye. You also have a right inferior nasal quadrant visual field defect and a right afferent pupillary defect. Your muscle strength and reflexes were normal, and your sensation to light touch, pinprick, vibration, and proprioception was intact. We also noticed the maculopapular rash on your bilateral lower extremities.
+          Patient: Oh, I see.
+          Doctor: Your admitting labs showed some abnormal results. You have microcytic anemia with a hemoglobin of 11.6 gm/dL, hematocrit of 35.3%, and mean corpuscular volume of 76.9 fL. You also have hyponatremia with a sodium level of 133 mmol/L. Your erythrocyte sedimentation rate (ESR) is elevated at 33 mm/hr, and your C-reactive protein (CRP) is also elevated at 13.3 mg/L. Your urinalysis did not show any protein or blood.
+          Patient: Okay. What does that mean?
+          Doctor: These results could indicate an underlying inflammatory or infectious process. We also performed a lumbar puncture, which showed clear and colorless fluid, 2 red blood cells per microliter, and 56 white blood cells per microliter.
+          Patient: So, what's the next step?
+          Doctor: We need to investigate further to determine the cause of your symptoms. We'll run additional tests and consult with a specialist to get a clearer understanding of your condition. In the meantime, we'll monitor your symptoms and provide supportive care. We'll keep you informed about any new findings and discuss the best course of treatment.
+          Patient: Alright, thank you, Doctor.`;
+
+      const response = await fetch('http://localhost:8000/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt: chatPrompt })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate response from chat endpoint.');
+      }
+
+      const result = await response.json();
+      console.log('Chat Response:', result);
+      setGeneratedLetter(result); // or use setChatResponse(result), depending on context
+      // setSuccess('Enhanced letter generated successfully!');
     } catch (error) {
       console.error('Error generating letter:', error);
-      setError('Failed to generate letter. Please try again.');
+      setError('Failed to generate letter. Please try again');
     } finally {
-      setIsGenerating(false);
+        setIsGenerating(false);
     }
+    // try {
+    //   const request: LetterGenerationRequest = {
+    //     patientInfo: selectedPatient,
+    //     letterType,
+    //     date,
+    //     doctorInfo: doctorInfo.name ? doctorInfo : undefined,
+    //     additionalNotes: additionalNotes || undefined,
+    //     conversationData: includeConversation ? {
+    //       messages: conversationMessages.map(msg => ({
+    //         id: msg.id,
+    //         sender: msg.sender,
+    //         message: msg.message,
+    //         timestamp: msg.timestamp
+    //       })),
+    //       include: true
+    //     } : undefined,
+    //     audioData: includeAudio ? {
+    //       files: audioFiles,
+    //       include: true
+    //     } : undefined,
+    //     documentData: includeChatDocuments ? {
+    //       documents: chatDocuments,
+    //       include: true
+    //     } : undefined
+    //   };
+
+    //   const letter = await letterGenerationApi.generateLetter(request);
+    //   setGeneratedLetter(letter);
+    //   setSuccess('Enhanced letter generated successfully!');
+    // } catch (error) {
+    //   console.error('Error generating letter:', error);
+    //   setError('Failed to generate letter. Please try again.');
+    // } finally {
+    //   setIsGenerating(false);
+    // }
   };
 
   const handleLetterUpdate = (updatedLetter: GeneratedLetter) => {
